@@ -2,6 +2,10 @@ import org.example.PhoneBook;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PhoneBookTest {
@@ -31,5 +35,24 @@ public class PhoneBookTest {
         PhoneBook.add(name, expectedNumber);
         long actualNumber = PhoneBook.findByName(name);
         assertEquals(expectedNumber, actualNumber);
+    }
+
+    @Test
+    public void testPrintAllNames() {
+        String name = "Anna";
+        String name2 = "Bob";
+        long number = 9999999999L;
+        long number2 = 8888888888L;
+
+        PhoneBook.add(name2, number2);
+        PhoneBook.add(name,number);
+
+        List<String> expectedAllNames = new ArrayList<>();
+        expectedAllNames.add(name);
+        expectedAllNames.add(name2);
+        Collections.sort(expectedAllNames);
+
+        List <String> actualAllNames = PhoneBook.printAllNames();
+        assertEquals(expectedAllNames, actualAllNames);
     }
 }
