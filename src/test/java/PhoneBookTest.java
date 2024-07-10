@@ -17,10 +17,19 @@ public class PhoneBookTest {
 
     @Test
     public void testFindByNumber() {
-        String name = "Name";
+        String expectedName = "Name";
         long number = 9999999999L;
-        PhoneBook.add(name, number);
-        String findName = PhoneBook.findByNumber(number);
-        assertEquals(name, findName);
+        PhoneBook.add(expectedName, number);
+        String actualName = PhoneBook.findByNumber(number);
+        assertEquals(expectedName, actualName);
+    }
+
+    @Test
+    public void testFindByName() {
+        String name = "Name";
+        long expectedNumber = 9999999999L;
+        PhoneBook.add(name, expectedNumber);
+        long actualNumber = PhoneBook.findByName(name);
+        assertEquals(expectedNumber, actualNumber);
     }
 }
