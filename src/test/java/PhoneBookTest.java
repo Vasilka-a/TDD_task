@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PhoneBookTest {
 
     @RepeatedTest(2)
-    public void testAdd () {
+    public void testAdd() {
         String name = "Name";
         long number = 9999999999L;
         int expectedSize = 1;
@@ -45,14 +45,14 @@ public class PhoneBookTest {
         long number2 = 8888888888L;
 
         PhoneBook.add(name2, number2);
-        PhoneBook.add(name,number);
+        PhoneBook.add(name, number);
 
         List<String> expectedAllNames = new ArrayList<>();
         expectedAllNames.add(name);
         expectedAllNames.add(name2);
         Collections.sort(expectedAllNames);
 
-        List <String> actualAllNames = PhoneBook.printAllNames();
+        List<String> actualAllNames = PhoneBook.printAllNames();
         assertEquals(expectedAllNames, actualAllNames);
     }
 }

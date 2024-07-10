@@ -7,7 +7,8 @@ import java.util.TreeMap;
 
 public class PhoneBook {
     static TreeMap<String, Long> phoneBookMap = new TreeMap<>();
-    public static int add(String name, long number ) {
+
+    public static int add(String name, long number) {
         if (phoneBookMap.containsKey(name)) {
             throw new IllegalArgumentException("Данное имя уже существует, введите другое имя");
         } else {
@@ -16,7 +17,7 @@ public class PhoneBook {
         return phoneBookMap.size();
     }
 
-    public static String findByNumber (long number) {
+    public static String findByNumber(long number) {
         String name = null;
 
         for (Map.Entry<String, Long> entry : phoneBookMap.entrySet()) {
@@ -28,14 +29,13 @@ public class PhoneBook {
         return name;
     }
 
-    public static long findByName (String name) {
+    public static long findByName(String name) {
         return phoneBookMap.get(name);
     }
 
     public static List<String> printAllNames() {
-        return null;
+        return new ArrayList<>(phoneBookMap.keySet());
     }
-
 
 
 }
