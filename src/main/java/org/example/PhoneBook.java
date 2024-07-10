@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Map;
 import java.util.TreeMap;
 
 public class PhoneBook {
@@ -11,6 +12,11 @@ public class PhoneBook {
             phoneBookMap.put(name, number);
         }
         return phoneBookMap.size();
+    }
+
+    public static String findByNumber (long number) {
+
+        return null;
     }
 
 
