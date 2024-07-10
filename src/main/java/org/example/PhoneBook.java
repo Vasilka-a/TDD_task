@@ -15,8 +15,15 @@ public class PhoneBook {
     }
 
     public static String findByNumber (long number) {
+        String name = null;
 
-        return null;
+        for (Map.Entry<String, Long> entry : phoneBookMap.entrySet()) {
+            if (entry.getValue().equals(number)) {
+                name = entry.getKey();
+                break;
+            }
+        }
+        return name;
     }
 
 
