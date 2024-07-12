@@ -10,7 +10,7 @@ public class PhoneBook {
 
     public static int add(String name, long number) {
         if (phoneBookMap.containsKey(name)) {
-            throw new IllegalArgumentException("Данное имя уже существует, введите другое имя");
+            System.out.println("Данное имя уже существует, введите другое имя");
         } else {
             phoneBookMap.put(name, number);
         }
